@@ -1,0 +1,157 @@
+Signout:
+
+[09/Mar/2023 05:45:44] "GET /logout.html HTTP/1.1" 302 0
+
+[09/Mar/2023 05:45:44] "GET /index.html HTTP/1.1" 200 18563
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:45:44] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:45:44] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+Register:
+
+09/Mar/2023 05:48:14] "GET /register.html HTTP/1.1" 200 12063
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:48:14] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:48:14] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+Register - Success:
+
+[09/Mar/2023 05:50:02] "POST /register.html HTTP/1.1" 302 0
+
+[09/Mar/2023 05:50:02] "GET /index.html HTTP/1.1" 200 18563
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:50:02] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:50:02] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+Register - Failure:
+
+[09/Mar/2023 05:50:02] "POST /register.html HTTP/1.1" 302 0
+
+[09/Mar/2023 05:50:02] "GET /index.html HTTP/1.1" 200 18563
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:50:02] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:50:02] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+Sign In Click:
+
+[09/Mar/2023 05:50:02] "POST /register.html HTTP/1.1" 302 0
+
+[09/Mar/2023 05:50:02] "GET /index.html HTTP/1.1" 200 18563
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:50:02] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:50:02] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+Sign In Success:
+
+Logged in user
+
+[09/Mar/2023 05:53:40] "POST /login.html HTTP/1.1" 302 0
+
+[09/Mar/2023 05:53:40] "GET /index.html HTTP/1.1" 200 18505
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:53:40] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:53:40] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+Sign In Failure:
+
+09/Mar/2023 05:54:42] "GET /login.html HTTP/1.1" 200 11764
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:54:42] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:54:42] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+[09/Mar/2023 05:55:03] "POST /login.html HTTP/1.1" 200 11811
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:55:03] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:55:03] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+
+Sign Out:
+
+[09/Mar/2023 05:54:06] "GET /logout.html HTTP/1.1" 302 0
+
+[09/Mar/2023 05:54:06] "GET /index.html HTTP/1.1" 200 18563
+
+Not Found: /fonts/icomoon/style.css
+
+[09/Mar/2023 05:54:06] "GET /fonts/icomoon/style.css HTTP/1.1" 404 6780
+
+Not Found: /fonts/flaticon/font/flaticon.css
+
+[09/Mar/2023 05:54:06] "GET /fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6807
+
+
+
+Select GiftCard:
+[11/Mar/2023 04:47:19] "GET /buy/1 HTTP/1.1" 200 9830
+
+Not Found: /buy/fonts/icomoon/style.css
+
+[11/Mar/2023 04:47:19] "GET /buy/fonts/icomoon/style.css HTTP/1.1" 404 6792
+
+Not Found: /buy/fonts/flaticon/font/flaticon.css
+
+[11/Mar/2023 04:47:19] "GET /buy/fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6819
+
+Buy:
+
+[11/Mar/2023 04:48:19] "POST /buy/1 HTTP/1.1" 200 200
+
+Buy Gift Card 3:
+
+[11/Mar/2023 04:49:19] "GET /buy/3 HTTP/1.1" 200 9869
+
+Not Found: /buy/fonts/icomoon/style.css
+
+[11/Mar/2023 04:49:19] "GET /buy/fonts/icomoon/style.css HTTP/1.1" 404 6792
+
+Not Found: /buy/fonts/flaticon/font/flaticon.css
+
+[11/Mar/2023 04:49:19] "GET /buy/fonts/flaticon/font/flaticon.css HTTP/1.1" 404 6819
+
+Buy:
+
+[11/Mar/2023 04:51:11] "POST /buy/3 HTTP/1.1" 200 205
+
+95$ buy.html for most of the gife card
+
+otherwise 

